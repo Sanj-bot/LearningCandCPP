@@ -1,0 +1,72 @@
+/*
+Given a string S contains 0's, 1's, and 2's, the task is to find the number of goals on the penalty.
+
+ '1' stands for "goal".
+ '0' stands for "no goal".
+ '2' stands for a foul which gives a penalty.
+
+
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function penaltyScore() which takes a string S as input and returns the goals count on the penalty.
+
+
+*/
+
+
+
+//{ Driver Code Starts
+ 
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+// } Driver Code Ends
+//User function template for C++
+class Solution{
+public:	
+	
+	int penaltyScore(string S)
+	{
+	    // Your code goes here
+	    int goals=0;
+	    for(int i=0;i<S.size();i++)
+	    {
+	        if(i==S.size()-1)
+	        {
+	            break;
+	        }
+	        if(S.at(i)=='2'&&S.at(i+1)=='1')
+	        {
+	            goals++;
+	        }
+	    }
+	    return goals;
+	}
+};
+
+//{ Driver Code Starts.
+
+int main() 
+{
+   	
+
+   	ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+   
+   	int t;
+   	cin >> t;
+   	while(t--)
+   	{
+   		string S;
+   		cin >> S;
+
+   	    Solution ob;
+
+   		cout << ob.penaltyScore(S) << "\n";
+   	}
+
+    return 0;
+}
+// } Driver Code Ends
